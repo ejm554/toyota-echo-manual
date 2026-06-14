@@ -8,3 +8,4 @@ output/
 # Python
 __pycache__/
 *.pyc
+test_download.pdf
