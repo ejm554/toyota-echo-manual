@@ -4,3 +4,22 @@ Scripts to scrape, download, sort, and merge individual PDF sections of the 2000
 
 ## Status
 In development.
+
+## Code Conventions
+
+### Script Header Comments
+Every script includes a header comment block describing:
+- **Filename** and stage/step reference
+- **Purpose**: what the script tests or does
+- **Expected result**: what success looks like
+
+Example:
+```python
+# script_name.py
+# Stage N, Step N - Brief description
+#
+# Longer explanation of what this script tests or does,
+# and why it matters in the context of the project.
+#
+# Expected result: what success looks like
+```
