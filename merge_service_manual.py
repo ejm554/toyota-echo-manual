@@ -5,14 +5,18 @@
 #   1. Scrapes all PDF URLs from the caphector TOC page
 #   2. Downloads each PDF into pdfs/ mirroring the server directory
 #      structure, skipping any files already downloaded
-#   3. Extracts the global sequential page number from the footer
-#      of each PDF's first page
-#   4. Sorts all PDFs by that page number
+#   3. Extracts the folio number from the footer of each PDF's first page
+#   4. Sorts all PDFs by folio number
 #   5. Merges them in order into a single output PDF
 #
 # Usage: python3 merge_service_manual.py
 #
 # Output: output/echo_service_manual.pdf
+#
+# Terminology:
+#   Page number  — chapter-relative number in the header (e.g., CH-2, CL-1)
+#   Folio number — sequential number in the footer (e.g., 864, 865)
+#                  used internally to sort and merge PDFs in correct order
 #
 # Notes:
 #   - Downloads are sequential with a 1 second delay between requests
@@ -35,6 +39,7 @@ DOWNLOAD_DIR = "pdfs"
 OUTPUT_DIR = "output"
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "echo_service_manual.pdf")
 DOWNLOAD_DELAY = 1  # seconds between requests
+MAX_DOWNLOADS = 10  # set to None to download all
 
 
 # --- Step 1: Scrape PDF URLs from TOC page ---
@@ -72,7 +77,7 @@ def download_pdfs(urls):
     downloaded = 0
     skipped = 0
 
-    for i, url in enumerate(urls):
+    for i, url in enumerate(urls[:MAX_DOWNLOADS] if MAX_DOWNLOADS else urls):
         local_path = url_to_local_path(url)
         if not local_path:
             print(f"  WARNING: Could not derive local path for {url}")
@@ -101,12 +106,16 @@ def download_pdfs(urls):
     print(f"  Done. {downloaded} downloaded, {skipped} skipped.")
 
 
-# --- Step 3: Extract page numbers ---
+# --- Step 3: Extract folio numbers ---
 
-def extract_page_number(pdf_path):
-    # Extract the global sequential page number from the footer of the
-    # first page only. Uses coordinate-based cropping to target the
-    # bottom 50 points of the page, avoiding false matches in body text.
+def extract_folio_num(pdf_path):
+    # Extract the folio number from the footer of the first page only.
+    # Uses coordinate-based cropping to target the bottom 50 points of
+    # the page, avoiding false matches from page number references in
+    # the body text.
+    #
+    # Footer format: "Author(cid:1): Date(cid:1): [folio number]"
+    # The (cid:1) artifacts require anchoring the regex to end-of-line.
     try:
         with pdfplumber.open(pdf_path) as pdf:
             first_page = pdf.pages[0]
@@ -120,11 +129,11 @@ def extract_page_number(pdf_path):
                 if match:
                     return int(match.group(1))
     except Exception as e:
-        print(f"  WARNING: Could not extract page number from {pdf_path}: {e}")
+        print(f"  WARNING: Could not extract folio number from {pdf_path}: {e}")
     return None
 
-def extract_all_page_numbers(urls):
-    print("\nStep 3: Extracting page numbers from footers...")
+def extract_all_folio_nums(urls):
+    print("\nStep 3: Extracting folio numbers from PDF footers...")
     pdf_entries = []
     failures = []
 
@@ -133,24 +142,24 @@ def extract_all_page_numbers(urls):
         if not local_path or not os.path.exists(local_path):
             continue
 
-        page_num = extract_page_number(local_path)
-        if page_num is not None:
-            pdf_entries.append((page_num, local_path))
+        folio_num = extract_folio_num(local_path)
+        if folio_num is not None:
+            pdf_entries.append((folio_num, local_path))
         else:
             failures.append(local_path)
-            print(f"  WARNING: No page number found in {local_path}")
+            print(f"  WARNING: No folio number found in {local_path}")
 
-    print(f"  Extracted {len(pdf_entries)} page numbers, {len(failures)} failures")
+    print(f"  Extracted {len(pdf_entries)} folio numbers, {len(failures)} failures")
     return pdf_entries, failures
 
 
-# --- Step 4: Sort ---
+# --- Step 4: Sort by folio number ---
 
 def sort_pdfs(pdf_entries):
-    print("\nStep 4: Sorting PDFs by page number...")
+    print("\nStep 4: Sorting PDFs by folio number...")
     sorted_entries = sorted(pdf_entries, key=lambda x: x[0])
-    print(f"  First: page {sorted_entries[0][0]} ({sorted_entries[0][1]})")
-    print(f"  Last:  page {sorted_entries[-1][0]} ({sorted_entries[-1][1]})")
+    print(f"  First: folio {sorted_entries[0][0]} ({sorted_entries[0][1]})")
+    print(f"  Last:  folio {sorted_entries[-1][0]} ({sorted_entries[-1][1]})")
     return sorted_entries
 
 
@@ -162,12 +171,12 @@ def merge_pdfs(sorted_entries):
 
     writer = pypdf.PdfWriter()
 
-    for i, (page_num, path) in enumerate(sorted_entries):
+    for i, (folio_num, path) in enumerate(sorted_entries):
         try:
             reader = pypdf.PdfReader(path)
             for page in reader.pages:
                 writer.add_page(page)
-            print(f"  [{i+1}/{len(sorted_entries)}] Added {path} (starts at page {page_num})")
+            print(f"  [{i+1}/{len(sorted_entries)}] Added {path} (folio {folio_num})")
         except Exception as e:
             print(f"  WARNING: Could not merge {path}: {e}")
 
@@ -183,11 +192,11 @@ def merge_pdfs(sorted_entries):
 if __name__ == "__main__":
     urls = scrape_pdf_urls(TOC_URL)
     download_pdfs(urls)
-    pdf_entries, failures = extract_all_page_numbers(urls)
+    pdf_entries, failures = extract_all_folio_nums(urls)
     sorted_entries = sort_pdfs(pdf_entries)
     merge_pdfs(sorted_entries)
 
     if failures:
-        print(f"\nWARNING: {len(failures)} PDFs could not be assigned a page number and were excluded from the merge.")
+        print(f"\nWARNING: {len(failures)} PDFs could not be assigned a folio number and were excluded from the merge.")
     else:
         print("\nComplete. No failures.")
