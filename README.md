@@ -23,3 +23,10 @@ Example:
 #
 # Expected result: what success looks like
 ```
+
+## Terminology
+
+This project uses the following terms to avoid ambiguity with the manual's own page numbering:
+
+- **Page number** — the chapter-relative number printed in the header of each manual page (e.g., CH-2, CL-1). This is what the manual itself means by "page."
+- **Folio number** — the sequential number printed in the footer of each manual page (e.g., 864, 865). Used internally to sort and merge PDF sections into the correct order.
