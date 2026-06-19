@@ -30,6 +30,16 @@ DOWNLOAD_DELAY = 1  # seconds between requests
 MAX_DOWNLOADS = 10  # set to None to download all
 
 
+# --- Step pause ---
+
+def pause(message="Press Enter to continue, or Ctrl+C to abort..."):
+    try:
+        input(f"\n{'─' * 50}\n  {message}\n{'─' * 50}\n")
+    except KeyboardInterrupt:
+        print("\nAborted.")
+        exit(0)
+
+
 # --- Step 1: Scrape PDF URLs from TOC page ---
 
 def scrape_pdf_urls(toc_url):
@@ -173,12 +183,24 @@ def merge_pdfs(sorted_entries):
 
 if __name__ == "__main__":
     urls = scrape_pdf_urls(TOC_URL)
+    pause()
+
     download_pdfs(urls)
+    pause()
+
     pdf_entries, failures = extract_all_folio_nums(urls)
+    pause()
+
     sorted_entries = sort_pdfs(pdf_entries)
+    pause()
+
     merge_pdfs(sorted_entries)
 
     if failures:
-        print(f"\nWARNING: {len(failures)} PDFs could not be assigned a folio number and were excluded from the merge.")
+        print(f"\n{'─' * 50}")
+        print(f"  WARNING: {len(failures)} PDFs could not be assigned a folio number and were excluded from the merge.")
+        print(f"{'─' * 50}")
     else:
-        print("\nComplete. No failures.")
+        print(f"\n{'─' * 50}")
+        print(f"  Complete. No failures.")
+        print(f"{'─' * 50}")
