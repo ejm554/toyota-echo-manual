@@ -1,27 +1,15 @@
 # merge_service_manual.py
 # Main pipeline script for the Toyota Echo Service Manual Merger
 #
-# Performs the following steps in sequence:
-#   1. Scrapes all PDF URLs from the caphector TOC page
-#   2. Downloads each PDF into pdfs/ mirroring the server directory
-#      structure, skipping any files already downloaded
-#   3. Extracts the folio number from the footer of each PDF's first page
-#   4. Sorts all PDFs by folio number
-#   5. Merges them in order into a single output PDF
-#
-# Usage: python3 merge_service_manual.py
-#
-# Output: output/echo_service_manual.pdf
-#
 # Terminology:
 #   Page number  — chapter-relative number in the header (e.g., CH-2, CL-1)
 #   Folio number — sequential number in the footer (e.g., 864, 865)
 #                  used internally to sort and merge PDFs in correct order
 #
-# Notes:
-#   - Downloads are sequential with a 1 second delay between requests
-#   - Resume support: already-downloaded PDFs are skipped
-#   - PDFs are not included in git (see .gitignore)
+# Usage: python3 merge_service_manual.py
+# Output: output/echo_service_manual.pdf
+#
+# NOTE: Header comments will be expanded once the script is finalized.
 
 import requests
 import pdfplumber
@@ -75,17 +63,11 @@ def url_to_local_path(url):
 def download_pdfs(urls):
     print("\nStep 2: Downloading PDFs...")
     downloaded = 0
-    skipped = 0
 
     for i, url in enumerate(urls[:MAX_DOWNLOADS] if MAX_DOWNLOADS else urls):
         local_path = url_to_local_path(url)
         if not local_path:
             print(f"  WARNING: Could not derive local path for {url}")
-            continue
-
-        # Skip if already downloaded
-        if os.path.exists(local_path):
-            skipped += 1
             continue
 
         # Create directory if needed
@@ -103,7 +85,7 @@ def download_pdfs(urls):
 
         time.sleep(DOWNLOAD_DELAY)
 
-    print(f"  Done. {downloaded} downloaded, {skipped} skipped.")
+    print(f"  Done. {downloaded} downloaded.")
 
 
 # --- Step 3: Extract folio numbers ---
