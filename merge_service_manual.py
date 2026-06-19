@@ -145,6 +145,41 @@ def extract_all_folio_nums(urls):
     return pdf_entries, failures
 
 
+# --- Step 3b: Validate folio numbers ---
+
+def validate_folio_nums(pdf_entries):
+    print("\nStep 3b: Validating folio numbers...")
+    folio_nums = [entry[0] for entry in pdf_entries]
+
+    # Check for duplicates
+    seen = set()
+    duplicates = []
+    for num in folio_nums:
+        if num in seen:
+            duplicates.append(num)
+        seen.add(num)
+
+    # Check for gaps in the sequence
+    min_folio = min(folio_nums)
+    max_folio = max(folio_nums)
+    full_range = set(range(min_folio, max_folio + 1))
+    gaps = sorted(full_range - seen)
+
+    print(f"  Folio number range: {min_folio} to {max_folio}")
+    print(f"  Expected count in range: {max_folio - min_folio + 1}")
+    print(f"  Actual count: {len(folio_nums)}")
+
+    if duplicates:
+        print(f"  DUPLICATES ({len(duplicates)}): {duplicates}")
+    else:
+        print(f"  No duplicates found.")
+
+    if gaps:
+        print(f"  GAPS ({len(gaps)}): {gaps}")
+    else:
+        print(f"  No gaps found.")
+
+
 # --- Step 4: Sort by folio number ---
 
 def sort_pdfs(pdf_entries):
@@ -189,6 +224,9 @@ if __name__ == "__main__":
     pause()
 
     pdf_entries, failures = extract_all_folio_nums(urls)
+    pause()
+
+    validate_folio_nums(pdf_entries)
     pause()
 
     sorted_entries = sort_pdfs(pdf_entries)
