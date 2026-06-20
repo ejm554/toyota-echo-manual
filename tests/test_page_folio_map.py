@@ -2,14 +2,15 @@
 # Spike: Generate a complete page number to folio number lookup table.
 #
 # Reads every page of every downloaded PDF, extracting the page number
-# from the header and the folio number from the footer. Outputs a
-# Markdown table sorted by page number (e.g., AC-1, AC-2, BE-47)
-# for use as a cross-reference lookup when navigating the manual.
+# from the header and the folio number from the footer. Outputs two
+# Markdown tables:
+#   1. Sorted by page number (e.g., AC-1, AC-2, BE-47)
+#   2. Sorted by folio number (reverse lookup)
 #
 # Output: tests/output/test_page_folio_map.md
 #
-# Expected result: ~1540 rows, one per page of the merged PDF, with
-# page number, folio number, and chapter code.
+# Expected result: 1538 rows in each table, one per page of the
+# merged PDF.
 
 import pdfplumber
 import re
@@ -66,26 +67,41 @@ for root, dirs, files in os.walk(DOWNLOAD_DIR):
 print(f"\n  Read {len(rows)} pages")
 
 # Sort by chapter code then page number within chapter
-def sort_key(row):
+def sort_key_by_page(row):
     page_num = row[0]
     match = re.match(r"([A-Z]+)-(\d+)", page_num)
     if match:
         return (match.group(1), int(match.group(2)))
     return (page_num, 0)
 
-rows.sort(key=sort_key)
+rows_by_page = sorted(rows, key=sort_key_by_page)
+rows_by_folio = sorted(rows, key=lambda x: x[1])
 
 # Write Markdown output
 os.makedirs("tests/output", exist_ok=True)
 output_path = "tests/output/test_page_folio_map.md"
 
 with open(output_path, "w") as f:
-    f.write("# Toyota Echo Service Manual — Page Number to Folio Number Map\n\n")
-    f.write("Use this table to find the folio number (position in the merged PDF) ")
-    f.write("for any page number referenced in the manual (e.g., 'see page BE-47').\n\n")
+    f.write("# Toyota Echo Service Manual — Page Number / Folio Number Map\n\n")
+    f.write("Use these tables to cross-reference page numbers and folio numbers.\n\n")
+    f.write("**Page number** — chapter-relative number in the header (e.g., BE-47)  \n")
+    f.write("**Folio number** — sequential number in the footer, matches Preview page number\n\n")
+    f.write("## Contents\n\n")
+    f.write("1. [Lookup by Page Number](#lookup-by-page-number) — find the folio number for a given page number (e.g., BE-47 → 1250)\n")
+    f.write("2. [Lookup by Folio Number](#lookup-by-folio-number) — find the page number for a given folio number (e.g., 1250 → BE-47)\n\n")
+
+    # Table 1: sorted by page number
+    f.write("## Lookup by Page Number\n\n")
     f.write("| Page Number | Folio |\n")
     f.write("|-------------|-------|\n")
-    for page_num, folio_num, path in rows:
+    for page_num, folio_num, path in rows_by_page:
         f.write(f"| {page_num} | {folio_num} |\n")
+
+    # Table 2: sorted by folio number
+    f.write("\n## Lookup by Folio Number\n\n")
+    f.write("| Folio | Page Number |\n")
+    f.write("|-------|-------------|\n")
+    for page_num, folio_num, path in rows_by_folio:
+        f.write(f"| {folio_num} | {page_num} |\n")
 
 print(f"Written to {output_path}")
