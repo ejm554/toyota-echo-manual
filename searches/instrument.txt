@@ -1,0 +1,156 @@
+16:                                                  The SRS wire harness is integrated with the instrument
+25:   Parameters listed in the chart may not be exactly the same as your reading due to the type of instrument or other
+36:I/P                         Instrument Panel
+165:Front passenger airbag assembly x Instrument panel reinforcement                18              185           13
+167:INSTRUMENT PANEL                                                                 -         -                -
+173:                                                       Lamp (MIL) on the instrument panel when the com-
+176:                                       scan tool to DLC3 under the instrument panel lower
+177:                                                                         under the instrument panel lower pad.
+184:Parameters listed in the chart may not be exactly the same as your reading due to the type of instrument
+193:              I10              Instrument Panel J/B
+193:       1O 1 Instrument                                                                                              ECM
+214:                                                                  Instrument Panel J/B
+234:          Instrument Panel J/B      Ignition   Instrument Panel J/B
+251:                 Instrument Panel J/B                                                                           ECM
+273:                                                         Instrument Panel J/B
+277:             I10 Ignition   Instrument Panel J/B
+277:               Instrument                                          B-R
+284:                                       I10          Instrument Panel
+284:                  Instrument Panel
+299:                     Stop Light Switch                 Instrument Panel J/B
+299:                   Instrument Panel J/B                   J/C                                 C
+308:               I10            Instrument
+308:             Instrument
+308:                                                                           Instrument
+312:                Instrument                                Instrument
+312:              AM2            EFI        EFI                                 Instrument Panel JB
+319:                                                       Lamp (MIL) on the instrument panel when the com-
+321:                                                       held tester to DLC3 at the lower of the instrument
+322:                                                               the lower of the instrument panel.
+337:                                              Instrument Panel J/B
+339:                                                        tween instrument panel J/B and ECM
+339:  4     Check for open in harness and connector between instrument panel J/B and
+362:                                                                          Instrument Panel J/B
+362:         Instrument                                                        1                               7
+368:                  Instrument Panel J/B                   Indicator Light
+368:                                   2                                 Instrument
+394:                                                           Instrument Panel J/B                                              with ECU
+395:            Instrument Panel J/B            PREPARATION:
+395:                                            Remove ECU-IG fuse from Instrument Panel J/B.
+397:                                                                         Instrument Panel J/B
+397:                    Instrument Panel J/B
+403:                        Instrument Panel J/B
+403:                                                      Instrument Panel J/B
+406:                                        Instrument Panel J/B
+419:                                                         Instrument panel wire harness
+419:                                                         Instrument panel wire harness
+530:                                                                          Instrument panel wire harness
+538:                                                                          Instrument panel wire harness
+562:                          I10                           Instrument Panel J/B
+565:                  SRS Warning Light                                Instrument Panel J/B
+565:            Instrument Panel J/B
+565:            Instrument Panel J/B               Ignition Switch                              A/B
+570:                                       Instrument Panel J/B
+580:    Instrument Panel Junction Block                 Ignition Switch
+588:                     2                  1                    2                                     Instrument Panel J/B
+590:                                    Instrument Panel J/B
+591:                                               (b) Remove the D/L fuse from the instrument panel junction
+591:Instrument panel junction block:
+597:                  HIGH                          Instrument Panel J/B
+599:        OFF                            Instrument Panel J/B
+599:                               (*1) B                                           Instrument
+601:                                            Instrument Panel J/B                                  Theft Deterrent ECU
+602:   Instrument Panel Junction Block            (a) Remove the fuse box opening cover.
+602:                                              (b) Remove the AM1 and ECU-IG fuses from the instrument
+603:                 Unlock Warning         Instrument Panel J/B
+613:                                       Instrument Panel J/B
+708:                                                        canister with a hose clipper or similar instrument.
+708:                                                        Remove the hose clipper or similar instrument from the air
+883:          SST                                  Using a dial indicator with roller instrument, check the dia-
+943:                                                                                       Lower Instrument Panel
+945:                                   (d)   Remove the cable from the clamp for No. 1 instrument
+951:                                   (b)     Install the cable to the clamp for No.1 instrument panel
+951:                                   3.     INSTALL REAR CONSOLE BOX, INSTRUMENT CLUS-
+1133:                                                      open the steering wheel pad and instrument panel door.
+1152:                                     Instrument Panel
+1153:                                             (b)  Remove the connector cover from the lower instrument
+1153:                                             7.   REMOVE INSTRUMENT PANEL
+1154:                                                     front passenger airbag assembly and instrument panel.
+1154:                                                          Check the deformation or cracks on the instrument
+1154:                                                           panel and instrument panel reinforcement.
+1154:                                                    If the instrument panel or instrument panel reinforcement
+1154:                                                   There should be no interference between the instrument
+1154:                                                         Check the deformation or cracks on the instrument
+1154:                                                          panel and instrument panel reinforcement.
+1154:                                             If the instrument panel or instrument panel reinforcement is de-
+1156:                                                        instrument panel.
+1161:In the following cases, replace the front passenger airbag assembly, instrument panel or instrument panel
+1161:If the instrument panel has been found to be faulty during checking items.
+1161:                                                                                 Instrument panel
+1161:If the instrument panel reinforcement has been found to be faulty during
+1161:                                                                                 Instrument panel reinforcement
+1162:                                             2.     INSTALL INSTRUMENT PANEL
+1162:                                             Install the bolt to the instrument panel reinforcement.
+1162:                                             (b)   Install the connector cover to the lower instrument panel.
+1204:The SRS wire harness is integrated with the instrument panel wire harness assembly. All the connectors in
+1215:        Instrument Panel Junction Block
+1216:    Instrument panel junction block:
+1219:        Instrument Panel Junction Block          Key Unlock Warning Switch
+1221:    Instrument Panel Junction Block
+1233:            Instrument Panel                                                               Hazard Warning
+1239:   Instrument Panel Junction Block
+1241:        Instrument Panel Junction Block
+1243:  Instrument Panel
+1247:        Instrument Panel Junction Block   Ignition Switch
+1260:     Instrument Panel Junction Block
+1264:             Instrument Panel              2 door models :
+1273:     Instrument Panel
+1281:       Instrument Panel
+1319:            Instrument Panel
+1395:                                                           BODY     -    INSTRUMENT PANEL
+1395:INSTRUMENT PANEL
+1395:                        A                                               Instrument Panel
+1395:                                                                                                    Instrument Panel
+1395:                                    B    Lower Instrument Panel            Upper Cluster
+1396:                                                BODY   -     INSTRUMENT PANEL
+1396:                                                                                       Instrument
+1396:                     Lower Instrument
+1397:                                              BODY    -   INSTRUMENT PANEL
+1398:                                        BODY   -   INSTRUMENT PANEL
+1399:                                           BODY   -   INSTRUMENT PANEL
+1400:                                     BODY   -   INSTRUMENT PANEL
+1400:                                   16.   REMOVE INSTRUMENT PANEL
+1400:                                   (b)  Remove the connector cover from the lower instrument
+1400:                                   (d) Remove the screws and instrument panel as shown in the
+1401:                               BODY   -   INSTRUMENT PANEL
+1401:                              21.   REMOVE LOWER INSTRUMENT PANEL
+1401:                     H11062   (d)   Remove the lower instrument panel.
+1401:                              25. REMOVE INSTRUMENT PANEL TO FLOOR BRACE
+1401:                              Remove the bolt and nut, then remove the instrument panel to
+1402:                       BODY   -   INSTRUMENT PANEL
+1403:                                          BODY   -   INSTRUMENT PANEL
+1403:                                              sembly to the instrument panel.
+1403:                                              instrument panel.
+1403:                                               instrument panel along the No. 1 box to remove the No.
+1403:                                               1 box from the instrument panel lower.
+1403:                                               Remove the screw and No. 1 box from the instrument
+1404:                                           BODY   -   INSTRUMENT PANEL
+1404:        Cut Line                      1.   When replacing instrument panel lower:
+1404:                                      (b)     Install the No. 1 box securely on the instrument panel with
+1404:                                      Use the same manner to instrument panel upper.
+1404:                                      2.     When reusing instrument panel lower:
+1404:                                      Install the No. 1 box to the instrument panel lower with the
+1405:                               BODY   -   INSTRUMENT PANEL
+1406:                                           BODY   -   INSTRUMENT PANEL
+1462:     Instrument Panel J/B
+1474:                                                                              Instrument Panel
+1474:                                                                              Lower Instrument Panel
+1474:         Instrument Panel
+1477:                                              3.    REMOVE INSTRUMENT PANEL AND REINFORCE-
+1483:    Instrument Panel
+1483:  Lower Instrument
+1483:                                                       Instrument Panel To Cowl Brace
+1513:                                            1.    REMOVE INSTRUMENT PANEL (See page BO-76 )
+1513:                                            2.    REMOVE HEATER MAIN RELAY FROM INSTRUMENT
+1513:                                            4.    INSTALL HEATER MAIN RELAY TO INSTRUMENT
+1513:                                            5.    INSTALL INSTRUMENT PANEL (See page BO-84 )

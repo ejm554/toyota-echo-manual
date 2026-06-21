@@ -1,0 +1,34 @@
+583:TAIL ↔ E
+599:                          Control                                                                         T6 TAIL
+599:        TAIL                         1        TAIL        4
+600:   1      Check voltage between terminal TAIL of theft deterrent ECU connector and body
+600:                                                  Measure voltage between terminal TAIL of theft deterrent ECU
+600:       TAIL
+617:                                       40 cm (1.3 ft) INTO TAILPIPE DURING IDLING
+1207:HEADLIGHT AND TAILLIGHT SYSTEM
+1207:                                                             1. TAIL Fuse                                      -
+1208:HEADLIGHT AND TAILLIGHT SYSTEM
+1208:Taillight does not come on with light control switch in TAIL.      2. Light Control Switch                          BE-21
+1211:                                                               1. TAIL Fuse                                        -
+1216:                                                                      8. TAIL Fuse
+1221:                                      BODY ELECTRICAL   -   HEADLIGHT AND TAILLIGHT SYSTEM
+1221:HEADLIGHT AND TAILLIGHT SYSTEM
+1221:     TAIL Fuse
+1222:                                  BODY ELECTRICAL   -   HEADLIGHT AND TAILLIGHT SYSTEM
+1223:                              BODY ELECTRICAL   -   HEADLIGHT AND TAILLIGHT SYSTEM
+1224:                     BODY ELECTRICAL    -   HEADLIGHT AND TAILLIGHT SYSTEM
+1225:                     BODY ELECTRICAL   -   HEADLIGHT AND TAILLIGHT SYSTEM
+1226:                                   BODY ELECTRICAL        -   HEADLIGHT AND TAILLIGHT SYSTEM
+1226:                                                          TAIL                          10 - 13             Continuity
+1226:    TAIL
+1226:                                                      INSPECT TAILLIGHT CONTROL RELAY CONTINUITY
+1227:                                    BODY ELECTRICAL          -    HEADLIGHT AND TAILLIGHT SYSTEM
+1227:             1 - Ground *1       Light control switch OFF or TAIL                    No continuity
+1228:                     BODY ELECTRICAL    -   HEADLIGHT AND TAILLIGHT SYSTEM
+1228:           TAIL                 Check that the buzzer sound when driver’s door is opened and
+1228:Control                         turn light control switch position TAIL.
+1229:                     BODY ELECTRICAL   -   HEADLIGHT AND TAILLIGHT SYSTEM
+1230:                                          BODY ELECTRICAL   -   HEADLIGHT AND TAILLIGHT SYSTEM
+1231:                                 BODY ELECTRICAL   -   HEADLIGHT AND TAILLIGHT SYSTEM
+1232:                                 BODY ELECTRICAL   -   HEADLIGHT AND TAILLIGHT SYSTEM
+1253:          B4 - Ground    Light control switch TAIL or HEAD                       Battery positive voltage

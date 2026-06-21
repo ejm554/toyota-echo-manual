@@ -27,7 +27,7 @@ DOWNLOAD_DIR = "pdfs"
 OUTPUT_DIR = "output"
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "echo_service_manual.pdf")
 DOWNLOAD_DELAY = 1  # seconds between requests
-MAX_DOWNLOADS = 10  # set to None to download all
+MAX_DOWNLOADS = None  # set to None to download all
 
 
 # --- Step pause ---

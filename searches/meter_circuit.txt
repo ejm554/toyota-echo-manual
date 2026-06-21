@@ -1,0 +1,23 @@
+25:                                                            Open or short in mass air flow meter circuit
+184:                                                   Open or short in mass air flow meter circuit
+192:                                                                                  Open or short in mass air flow meter circuit
+192:               Open or short in mass air flow meter circuit with more than 3
+274:                                                NG        Check speedometer circuit. See combination
+1211:                                                               2. Meter Circuit Plate                            BE-44
+1211:Speedometer does not operate.                                  2. Meter Circuit Plate                            BE-44
+1211:                                                               3. Meter Circuit Plate                            BE-44
+1211:                                                               3. Meter Circuit Plate                            BE-44
+1211:All illumination lights do not light up.                       2. Meter Circuit Plate                            BE-47
+1212:                                                                  2. Meter Circuit Plate                                  BE-44
+1212:                                                                  4. Meter Circuit Plate                                  BE-44
+1212:                                                                  3. Meter Circuit Plate                                  BE-44
+1212:                                                                  4. Meter Circuit Plate                                  BE-44
+1212:                                                                  4. Meter Circuit Plate                                  BE-44
+1212:                                                                  3. Meter Circuit Plate                                 BE-44
+1212:                                                                  4. Meter Circuit Plate                                  BE-44
+1212:                                                                  3. Meter Circuit Plate                                  BE-44
+1213:                                                               3. Meter Circuit Plate                              BE-44
+1213:                                                               2. Meter Circuit Plate                               BE-44
+1213:                                                               2. Meter Circuit Plate                               BE-44
+1213:                                                               3. Meter Circuit Plate                               BE-44
+1252:                                                         INSPECT COMBINATION METER CIRCUIT
