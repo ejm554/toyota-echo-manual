@@ -12,3 +12,4 @@ test_download.pdf
 tests/output/
 pdfs/
 output/
+.DS_Store
