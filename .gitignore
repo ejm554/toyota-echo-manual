@@ -1,6 +1,5 @@
 # Downloaded PDFs - not ours to redistribute
 pdfs/
-*.pdf
 
 # Final merged output
 output/
